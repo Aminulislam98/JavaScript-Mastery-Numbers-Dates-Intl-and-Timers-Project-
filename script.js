@@ -304,3 +304,19 @@ const randomInt = (min, max) =>
 
 // to remove decimal part is used Math.trunc() that ignore all decimal part
 console.log(Math.trunc(12.33));
+
+console.log('-------Math.round()------');
+console.log(Math.round(2.8));
+console.log(Math.round(2.3));
+
+console.log('-------Math.ceil()------');
+console.log(Math.ceil(2.8));
+console.log(Math.ceil(2.3));
+
+console.log('-------Math.floor()------');
+console.log(Math.floor(2.8));
+console.log(Math.floor(2.3));
+
+// toFixed always return string
+console.log((23.902).toFixed());
+console.log(+(23.902).toFixed());
