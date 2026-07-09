@@ -295,3 +295,8 @@ console.log(Math.PI * Number.parseFloat('10') ** 2);
 // math.random() give decimal number under 1 without arguments
 // to get random number use math random
 console.log(Math.trunc(Math.random() * 10) + 1);
+
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
+
+console.log(randomInt(12, 15));
