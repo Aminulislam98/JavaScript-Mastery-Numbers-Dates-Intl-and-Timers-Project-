@@ -279,3 +279,12 @@ console.log(Number.isFinite('22'));
 console.log(Number.isFinite());
 
 // Math and rounding
+console.log(Math.sqrt(25));
+
+// maximum number
+// math.max has type coercion mean it will convert the string to number
+console.log(Math.max(23, 23, 2, 323, 34, '23'));
+
+// minium number Math.min() method
+// min() method has type coercion
+console.log(Math.min(23, 23, 2, 345, 99, '99'));
