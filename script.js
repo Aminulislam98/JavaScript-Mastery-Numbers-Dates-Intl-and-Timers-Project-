@@ -266,3 +266,5 @@ console.log(0.1 + 0.2 === 0.3);
 console.log(Number.parseInt('30fr'));
 console.log(Number.parseInt('e30'));
 console.log(Number.parseFloat('2.3rem'));
+
+console.log(Number.isNaN('2'));
