@@ -255,10 +255,14 @@ btnSort.addEventListener('click', function (e) {
 //  Base 10 - 0 to 9. 1/10 = 0.1. 3/10 = 3.333333
 // Binary base 2 - 0 1
 console.log(0.1 + 0.2);
-console.log(0.1 + 0.2 === 0.3);
 
 console.log(0.3 + 0);
 console.log(0.3);
 
 console.log(typeof Number(23));
 console.log(typeof +'23');
+console.log(0.1 + 0.2 === 0.3);
+
+console.log(Number.parseInt('30fr'));
+console.log(Number.parseInt('e30'));
+console.log(Number.parseFloat('2.3rem'));
