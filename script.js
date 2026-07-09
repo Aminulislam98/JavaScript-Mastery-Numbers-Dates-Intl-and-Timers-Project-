@@ -288,3 +288,10 @@ console.log(Math.max(23, 23, 2, 323, 34, '23'));
 // minium number Math.min() method
 // min() method has type coercion
 console.log(Math.min(23, 23, 2, 345, 99, '99'));
+
+//
+console.log(Math.PI * Number.parseFloat('10') ** 2);
+
+// math.random() give decimal number under 1 without arguments
+// to get random number use math random
+console.log(Math.trunc(Math.random() * 10) + 1);
