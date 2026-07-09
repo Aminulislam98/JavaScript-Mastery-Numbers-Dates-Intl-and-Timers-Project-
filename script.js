@@ -299,4 +299,8 @@ console.log(Math.trunc(Math.random() * 10) + 1);
 const randomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
-console.log(randomInt(12, 15));
+// console.log(randomInt(12, 15));
+// console.log(randomInt(5, 10));
+
+// to remove decimal part is used Math.trunc() that ignore all decimal part
+console.log(Math.trunc(12.33));
