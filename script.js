@@ -268,3 +268,14 @@ console.log(Number.parseInt('e30'));
 console.log(Number.parseFloat('2.3rem'));
 
 console.log(Number.isNaN('2'));
+
+// Checking if value is a number
+// There is 2 isFinite method , one is just isFinite() and another is Number.isFinite() the global isFinite method does type coercion then compare the value, but the Number.isFinite() method does not have type coercion
+
+console.log(Number.isFinite(45));
+console.log(Number.isFinite('22'));
+
+// to checking is value is number or not , in this case the Number.inFinite() good to check
+console.log(Number.isFinite());
+
+// Math and rounding
