@@ -256,3 +256,6 @@ console.log(3 / 2);
 console.log(3 % 2);
 console.log(9 / 3);
 console.log(9 % 3);
+
+const isEven = n => n % 2 === 0;
+console.log(isEven(5));
