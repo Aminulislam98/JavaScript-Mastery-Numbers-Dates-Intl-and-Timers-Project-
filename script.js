@@ -274,3 +274,10 @@ console.log(parseInt('232_232'));
 // Working with Bigint
 console.log(2 ** 53 - 1);
 console.log(Number.MAX_SAFE_INTEGER);
+
+// BigInt()
+console.log(BigInt(1212121085));
+console.log(940349043090439409395n);
+
+//  to calculate the bigint number should be both bigint
+console.log(11n / 3n);
