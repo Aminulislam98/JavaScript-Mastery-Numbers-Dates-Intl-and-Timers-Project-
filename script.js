@@ -251,3 +251,8 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+// The reminder operator
+console.log(3 / 2);
+console.log(3 % 2);
+console.log(9 / 3);
+console.log(9 % 3);
