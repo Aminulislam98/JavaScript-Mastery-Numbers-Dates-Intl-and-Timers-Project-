@@ -266,3 +266,11 @@ console.log(isEven(5));
 
 const diameter = 245_343_989;
 console.log(diameter);
+console.log(Number('232_3'));
+
+// In parseInt() method can be used a underscore it does not effect the value
+console.log(parseInt('232_232'));
+
+// Working with Bigint
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
