@@ -281,3 +281,18 @@ console.log(940349043090439409395n);
 
 //  to calculate the bigint number should be both bigint
 console.log(11n / 3n);
+
+// Creating dates
+console.log(new Date(0));
+console.log(new Date(3 * 24 * 60 * 60 * 1000));
+
+// Working with date
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getHours());
+console.log(future.getMinutes());
+
+// date has method to set time
