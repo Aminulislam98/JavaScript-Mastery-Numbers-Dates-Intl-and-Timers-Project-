@@ -259,3 +259,10 @@ console.log(9 % 3);
 
 const isEven = n => n % 2 === 0;
 console.log(isEven(5));
+
+// Numeric separators
+// Numeric separators can not be used in Number() method to make any string number to number
+// and also to store number and while using underscore should be between number, not at the first of the sentence or at the last
+
+const diameter = 245_343_989;
+console.log(diameter);
