@@ -66,3 +66,49 @@ console.log(Math.floor(2.3));
 // toFixed always return string
 console.log((23.902).toFixed());
 console.log(+(23.902).toFixed());
+
+// The reminder operator
+console.log(3 / 2);
+console.log(3 % 2);
+console.log(9 / 3);
+console.log(9 % 3);
+
+const isEven = n => n % 2 === 0;
+console.log(isEven(5));
+
+// Numeric separators
+// Numeric separators can not be used in Number() method to make any string number to number
+// and also to store number and while using underscore should be between number, not at the first of the sentence or at the last
+
+const diameter = 245_343_989;
+console.log(diameter);
+console.log(Number('232_3'));
+
+// In parseInt() method can be used a underscore it does not effect the value
+console.log(parseInt('232_232'));
+
+// Working with Bigint
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+
+// BigInt()
+console.log(BigInt(1212121085));
+console.log(940349043090439409395n);
+
+//  to calculate the bigint number should be both bigint
+console.log(11n / 3n);
+
+// Creating dates
+console.log(new Date(0));
+console.log(new Date(3 * 24 * 60 * 60 * 1000));
+
+// Working with date
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getHours());
+console.log(future.getMinutes());
+
+// date has method to set time
