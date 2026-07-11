@@ -281,3 +281,5 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 // LECTURES
 // Important
+
+// Operation with dates
