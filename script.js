@@ -91,6 +91,12 @@ const displayMovements = function (acc, sort = false) {
   movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
+    const date = new Date(acc.movementsDates[i]);
+    const day = `${date.getDate()}`.padStart(2, 0);
+    const month = `${date.getMonth() + 1}`.padStart(2, 0);
+    const year = date.getFullYear();
+    const displayDate = `${day}/${month}/${year}`;
+
     const html = `
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${
@@ -158,20 +164,6 @@ const updateUI = function (acc) {
 // Event handlers
 let currentAccount;
 
-currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 100;
-
-const now = new Date();
-// wrapping the number type value through template , it will make string , this is easy way to convert into string
-const day = `${now.getDate()}`;
-const month = now.getMonth();
-const year = now.getFullYear();
-const hour = now.getHours();
-const min = now.getMinutes();
-labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
-console.log(typeof day);
-
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
   e.preventDefault();
@@ -179,7 +171,6 @@ btnLogin.addEventListener('click', function (e) {
   currentAccount = accounts.find(
     acc => acc.username === inputLoginUsername.value,
   );
-  console.log(currentAccount);
 
   if (currentAccount?.pin === +inputLoginPin.value) {
     // Display UI and message
@@ -195,6 +186,15 @@ btnLogin.addEventListener('click', function (e) {
     // Update UI
     updateUI(currentAccount);
   }
+  const now = new Date();
+  // wrapping the number type value through template , it will make string , this is easy way to convert into string
+  const day = `${now.getDate()}`.padStart(2, 0);
+  const month = now.getMonth();
+  const year = now.getFullYear();
+  const hour = now.getHours();
+  const min = now.getMinutes();
+  labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
+  console.log(typeof day);
 });
 
 btnTransfer.addEventListener('click', function (e) {
@@ -215,6 +215,10 @@ btnTransfer.addEventListener('click', function (e) {
     currentAccount.movements.push(-amount);
     receiverAcc.movements.push(amount);
 
+    // add transfer date;
+    currentAccount.movementsDates.push(new Date());
+    receiverAcc.movementsDates.push(new Date());
+
     // Update UI
     updateUI(currentAccount);
   }
@@ -228,6 +232,10 @@ btnLoan.addEventListener('click', function (e) {
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
     // Add movement
     currentAccount.movements.push(amount);
+
+    // adding date
+
+    currentAccount.movementsDates.push(new Date());
 
     // Update UI
     updateUI(currentAccount);
