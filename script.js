@@ -81,7 +81,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // Functions
 
-const formatMovementDate = function (date) {
+const formatMovementDate = function (date, locale) {
   const calcDaysPassed = (date1, date2) =>
     Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
   const dayPassed = calcDaysPassed(new Date(), date);
@@ -90,10 +90,11 @@ const formatMovementDate = function (date) {
   if (dayPassed === 1) return 'Yesterday';
   if (dayPassed <= 7) return `${dayPassed} days ago`;
 
-  const day = `${date.getDate()}`.padStart(2, 0);
-  const month = `${date.getMonth() + 1}`.padStart(2, 0);
-  const year = date.getFullYear();
-  return `${day}/${month}/${year}`;
+  // const day = `${date.getDate()}`.padStart(2, 0);
+  // const month = `${date.getMonth() + 1}`.padStart(2, 0);
+  // const year = date.getFullYear();
+  // return `${day}/${month}/${year}`;
+  return new Intl.DateTimeFormat(locale).format(date);
 };
 
 const displayMovements = function (acc, sort = false) {
@@ -111,8 +112,12 @@ const displayMovements = function (acc, sort = false) {
     const type = movement > 0 ? 'deposit' : 'withdrawal';
 
     const date = new Date(movementDate);
-    const displayDate = formatMovementDate(date);
+    const displayDate = formatMovementDate(date, obj.locale);
     console.log(displayDate);
+    const formattedMov = new Intl.NumberFormat(obj.locale, {
+      style: 'currency',
+      currency: 'USD',
+    }).format(obj.movement);
 
     const html = `
       <div class="movements__row">
@@ -120,7 +125,7 @@ const displayMovements = function (acc, sort = false) {
           i + 1
         } ${type}</div>
         <div class="movements__date">${displayDate}</div>
-        <div class="movements__value">${+movement.toFixed(2)}€</div>
+        <div class="movements__value">${formattedMov}</div>
       </div>
     `;
 
@@ -210,8 +215,23 @@ btnLogin.addEventListener('click', function (e) {
   const year = now.getFullYear();
   const hour = now.getHours();
   const min = now.getMinutes();
-  labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
-  console.log(typeof day);
+  // labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
+  // console.log(typeof day);
+
+  // Experimenting APi
+  const options = {
+    hour: 'numeric',
+    minute: 'numeric',
+    day: 'numeric',
+    month: 'numeric',
+    year: 'numeric',
+    weekday: 'long',
+  };
+
+  labelDate.textContent = new Intl.DateTimeFormat(
+    currentAccount.locale,
+    options,
+  ).format(now);
 });
 
 btnTransfer.addEventListener('click', function (e) {
@@ -298,3 +318,15 @@ btnSort.addEventListener('click', function (e) {
 // Operation with dates
 
 const future = new Date(2037, 10, 19, 15, 23);
+const num = 23323890498;
+const options = {
+  style: 'currency',
+  unit: 'celsius',
+  currency: 'EUR',
+  // useGrouping:
+};
+console.log('Num', new Intl.NumberFormat('en-GB').format(num));
+console.log(
+  navigator.language,
+  new Intl.NumberFormat(navigator.language, options).format(num),
+);
