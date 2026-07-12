@@ -325,17 +325,3 @@ btnSort.addEventListener('click', function (e) {
 // Important
 
 // Operation with dates
-
-const future = new Date(2037, 10, 19, 15, 23);
-const num = 23323890498;
-const options = {
-  style: 'currency',
-  unit: 'celsius',
-  currency: 'EUR',
-  // useGrouping:
-};
-console.log('Num', new Intl.NumberFormat('en-GB').format(num));
-console.log(
-  navigator.language,
-  new Intl.NumberFormat(navigator.language, options).format(num),
-);
