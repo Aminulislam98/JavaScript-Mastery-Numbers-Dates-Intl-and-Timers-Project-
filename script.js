@@ -325,3 +325,12 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 // LECTURES
 // Important
+// setTimeout
+setInterval(() => {
+  const now = new Date();
+  const hour = now.getHours();
+  const minute = now.getMinutes();
+  const seconds = now.getSeconds();
+  const currentTime = `${hour}:${minute}:${seconds}`;
+  console.log(currentTime);
+}, 1000);
