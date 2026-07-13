@@ -328,9 +328,9 @@ btnSort.addEventListener('click', function (e) {
 // setTimeout
 setInterval(() => {
   const now = new Date();
-  const hour = now.getHours();
-  const minute = now.getMinutes();
-  const seconds = now.getSeconds();
+  const hour = `${now.getHours()}`.padStart(2, 0);
+  const minute = `${now.getMinutes()}`.padStart(2, 0);
+  const seconds = `${now.getSeconds()}`.padStart(2, 0);
   const currentTime = `${hour}:${minute}:${seconds}`;
   console.log(currentTime);
 }, 1000);
