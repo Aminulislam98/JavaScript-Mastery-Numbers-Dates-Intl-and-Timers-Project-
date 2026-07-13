@@ -323,16 +323,3 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 // LECTURES
 // Important
-
-// Operation with dates
-const ingredients = ['onion', 'cheese'];
-
-const pizzaMaker = setTimeout(
-  (ing1, ing2) => {
-    return console.log(`Here is your pizza with ${ing1} and ${ing2}`);
-  },
-  3000,
-  ...ingredients,
-);
-console.log('Waiting....');
-if (ingredients.includes('onion')) clearTimeout(pizzaMaker);
